@@ -1,0 +1,5 @@
+config SHIELD_EDGY4BY6_LEFT
+    def_bool $(shields_list_contains,edgy4by6_left)
+
+config SHIELD_EDGY4BY6_RIGHT
+    def_bool $(shields_list_contains,edgy4by6_right)
