@@ -1,0 +1,16 @@
+if SHIELD_EDGY4BY6_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "edgy4by6"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif # SHIELD_EDGY4BY6_LEFT
+
+if SHIELD_EDGY4BY6_LEFT || SHIELD_EDGY4BY6_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif # SHIELD_EDGY4BY6_LEFT || SHIELD_EDGY4BY6_RIGHT
