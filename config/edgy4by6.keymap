@@ -11,8 +11,8 @@
         default_layer {
             bindings = <
 &kp ESCAPE  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5                &none  &none  &none  &none  &none  &none
-&none       &kp Q         &kp W         &none         &none         &none                 &none  &none  &none  &none  &none  &none
-&none       &none         &none         &none         &none         &none                 &none  &none  &none  &none  &none  &none
+&none       &kp Q         &kp W         &kp E         &kp R         &kp T                 &none  &none  &none  &none  &none  &none
+&none       &kp A         &kp S         &kp D         &kp F         &kp G                 &none  &none  &none  &none  &none  &none
 &none       &none         &none         &none         &none         &none   &none  &none  &none  &none  &none  &none  &none  &none
                                                       &none         &none   &none  &none  &none  &none
             >;
