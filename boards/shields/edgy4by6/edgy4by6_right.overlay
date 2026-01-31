@@ -1,19 +1,21 @@
-// This file was generated from a template. Edit it to match your keyboard.
-// See https://zmk.dev/docs/development/hardware-integration/new-shield for more
-// instructions.
+// Right side overlay for edgy4by6 split keyboard
+// 6 columns x 5 rows
 
 #include "edgy4by6.dtsi"
 
 &default_transform {
-    // Set this to the number of columns on the left side.
-    col-offset = <2>;
+    // Set this to the number of columns on the left side
+    col-offset = <6>;
 };
 
 &kscan {
-    // Replace these comments with the GPIO pins in the matrix for the right side.
-    // See https://zmk.dev/docs/development/hardware-integration/new-shield#shield-overlays
+    // Column pins for the RIGHT side (6 columns)
     col-gpios
-        = <&gpio0 0 GPIO_ACTIVE_HIGH>
-        , <&gpio0 0 GPIO_ACTIVE_HIGH>
+        = <&gpio0 24 GPIO_ACTIVE_HIGH>  // P0.24 - Column 6
+        , <&gpio1  0 GPIO_ACTIVE_HIGH>  // P1.00 - Column 7
+        , <&gpio0 11 GPIO_ACTIVE_HIGH>  // P0.11 - Column 8
+        , <&gpio1  4 GPIO_ACTIVE_HIGH>  // P1.04 - Column 9
+        , <&gpio1  6 GPIO_ACTIVE_HIGH>  // P1.06 - Column 10
+        , <&gpio0  9 GPIO_ACTIVE_HIGH>  // P0.09 - Column 11
         ;
 };
