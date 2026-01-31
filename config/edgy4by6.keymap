@@ -12,7 +12,7 @@
         // Press Left Shift + Right Ctrl together to unlock ZMK Studio
         combo_studio_unlock {
             timeout-ms = <50>;
-            key-positions = <24 47>;  // Left Shift (position 24) + Right Ctrl (position 47)
+            key-positions = <24 49>;  // Left Shift (position 24) + Right Ctrl (position 49)
             bindings = <&studio_unlock>;
         };
     };
