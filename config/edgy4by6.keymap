@@ -3,9 +3,16 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/studio.h>
 
 / {
+    behaviors {
+        studio_unlock: studio_unlock {
+            compatible = "zmk,behavior-studio-unlock";
+            label = "STUDIO_UNLOCK";
+            #binding-cells = <0>;
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
         
