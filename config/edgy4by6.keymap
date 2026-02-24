@@ -6,74 +6,75 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
-    behaviors {
-        studio_unlock: studio_unlock {
-            compatible = "zmk,behavior-studio-unlock";
-            label = "STUDIO_UNLOCK";
-            #binding-cells = <0>;
-        };
+  behaviors {
+    studio_unlock: studio_unlock {
+      compatible = "zmk,behavior-studio-unlock";
+      label = "STUDIO_UNLOCK";
+      #binding-cells = <0>;
+    };
+  };
+
+  combos {
+    compatible = "zmk,combos";
+
+    // Press Left Shift + Right Ctrl together to unlock ZMK Studio
+    combo_studio_unlock {
+      timeout-ms = <50>;
+      key-positions = <24 49>;  // Left Shift (position 24) + Right Ctrl (position 49)
+      bindings = <&studio_unlock>;
     };
 
-    combos {
-        compatible = "zmk,combos";
-        
-        // Press Left Shift + Right Ctrl together to unlock ZMK Studio
-        combo_studio_unlock {
-            timeout-ms = <50>;
-            key-positions = <24 49>;  // Left Shift (position 24) + Right Ctrl (position 49)
-            bindings = <&studio_unlock>;
-        };
-
-        // Press Left Win + Right Bracket together to soft-off (power off)
-        combo_soft_off {
-            timeout-ms = <500>;
-            key-positions = <50 55>;  // Left Win (position 50) + Right Bracket (position 55)
-            bindings = <&soft_off>;
-        };
-
-        // Press Left Ctrl + Left Win + Left Alt together to enter bootloader (left half only)
-        combo_bootloader {
-            timeout-ms = <500>;
-            key-positions = <36 50 51>;  // Left Ctrl (36) + Left Win (50) + Left Alt (51)
-            bindings = <&bootloader>;
-        };
-
-        // Press ESC + Left Shift + Left Ctrl to system reset (reboot firmware)
-        combo_sys_reset {
-            timeout-ms = <500>;
-            key-positions = <0 24 36>;  // ESC (0) + Left Shift (24) + Left Ctrl (36)
-            bindings = <&sys_reset>;
-        };
-
-        // Press Left Shift + Left Ctrl + Left Win to clear all BT bonds
-        combo_bt_clr_all {
-            timeout-ms = <500>;
-            key-positions = <24 36 50>;  // Left Shift (24) + Left Ctrl (36) + Left Win (50)
-            bindings = <&bt BT_CLR_ALL>;
-        };
+    // Press Left Win + Right Bracket together to soft-off (power off)
+    combo_soft_off {
+      timeout-ms = <500>;
+      key-positions = <50 55>;  // Left Win (position 50) + Right Bracket (position 55)
+      bindings = <&soft_off>;
     };
 
-    keymap {
-        compatible = "zmk,keymap";
-
-        default_layer {
-            bindings = <
-&kp ESCAPE      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5                               &kp NUMBER_6      &kp N7             &kp N8     &kp N9      &kp N0         &kp DELETE
-&none           &kp Q         &kp W         &kp E         &kp R         &kp T                                &kp Y             &kp U              &kp I      &kp O       &kp P          &kp BACKSPACE
-&kp LEFT_SHIFT  &kp A         &kp S         &kp D         &kp F         &kp G                                &kp H             &kp J              &kp K      &kp L       &kp SEMICOLON  &kp SQT
-&kp LCTRL       &kp Z         &kp X         &kp C         &kp V         &kp B         &lt 1 A    &none       &kp N             &kp M              &kp COMMA  &kp PERIOD  &kp SLASH      &kp RIGHT_CONTROL
-                                                          &kp LEFT_WIN  &kp LEFT_ALT  &kp SPACE  &kp RETURN  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-            >;
-        };
-
-        layer_1 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans                &trans          &trans        &trans           &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &kp MINUS             &kp EQUAL       &trans        &trans           &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &kp LEFT_ARROW        &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp NON_US_BACKSLASH  &trans          &trans        &trans           &trans  &trans
-                                &trans  &trans  &trans  &trans  &trans                &trans
-            >;
-        };
+    // Press Left Ctrl + Left Win + Left Alt together to enter bootloader (left half only)
+    combo_bootloader {
+      timeout-ms = <500>;
+      key-positions = <36 50 51>;  // Left Ctrl (36) + Left Win (50) + Left Alt (51)
+      bindings = <&bootloader>;
     };
+
+    // Press ESC + Left Shift + Left Ctrl to system reset (reboot firmware)
+    combo_sys_reset {
+      timeout-ms = <500>;
+      key-positions = <0 24 36>;  // ESC (0) + Left Shift (24) + Left Ctrl (36)
+      bindings = <&sys_reset>;
+    };
+
+    // Press Left Shift + Left Ctrl + Left Win to clear all BT bonds
+    combo_bt_clr_all {
+      timeout-ms = <500>;
+      key-positions = <24 36 50>;  // Left Shift (24) + Left Ctrl (36) + Left Win (50)
+      bindings = <&bt BT_CLR_ALL>;
+    };
+  };
+
+  keymap {
+    compatible = "zmk,keymap";
+
+    default_layer {
+      bindings = <
+        &kp ESCAPE      &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5                               &kp NUMBER_6      &kp N7             &kp N8     &kp N9      &kp N0         &kp DELETE
+        &none           &kp Q         &kp W         &kp E         &kp R         &kp T                                &kp Y             &kp U              &kp I      &kp O       &kp P          &kp BACKSPACE
+        &kp LEFT_SHIFT  &kp A         &kp S         &kp D         &kp F         &kp G                                &kp H             &kp J              &kp K      &kp L       &kp SEMICOLON  &kp SQT
+        &kp LCTRL       &kp Z         &kp X         &kp C         &kp V         &kp B                                &kp N             &kp M              &kp COMMA  &kp PERIOD  &kp SLASH      &kp RIGHT_CONTROL
+        &none           &none         &kp LEFT_WIN  &kp LEFT_ALT  &kp SPACE     &lt 1 A                              &none &kp RETURN  &kp LEFT_BRACKET   &kp RIGHT_BRACKET      &none          &none
+      >;
+    };
+
+    layer_1 {
+      bindings = <
+
+        &trans  &trans  &trans  &trans  &trans  &trans                  &trans                &trans          &trans        &trans           &trans  &trans
+        &trans  &trans  &trans  &trans  &trans  &trans                  &kp MINUS             &kp EQUAL       &trans        &trans           &trans  &trans
+        &trans  &trans  &trans  &trans  &trans  &trans                  &kp LEFT_ARROW        &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans  &trans
+        &trans  &trans  &trans  &trans  &trans  &trans                  &kp NON_US_BACKSLASH  &trans          &trans        &trans           &trans  &trans
+        &trans  &trans  &trans  &trans  &trans  &trans                  &trans                &trans          &trans        &trans           &trans  &trans
+      >;
+    };
+  };
 };
