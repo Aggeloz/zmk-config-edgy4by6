@@ -14,45 +14,7 @@
         };
     };
 
-    combos {
-        compatible = "zmk,combos";
 
-        // Press Left Shift + Right Ctrl together to unlock ZMK Studio
-        // Press Left Ctrl + Left Win + Left Alt together to enter bootloader (left half only)
-        // Press ESC + Left Shift + Left Ctrl to system reset (reboot firmware)
-        // Press Left Shift + Left Ctrl + Left Win to clear all BT bonds
-
-        combo_bt_clr_all {
-            timeout-ms = <500>;
-            require-prior-idle-ms = <500>;
-            key-positions = <24 36 50>;  // Left Shift (24) + Left Ctrl (36) + Left Win (50)
-            bindings = <&bt BT_CLR_ALL>;
-        };
-    };
-
-    // Press Left Ctrl + Left Win + Left Alt together to enter bootloader (left half only)
-
-    combo_bootloader {
-        timeout-ms = <500>;
-        key-positions = <36 50 51>;  // Left Ctrl (36) + Left Win (50) + Left Alt (51)
-        bindings = <&bootloader>;
-    };
-
-    // Press ESC + Left Shift + Left Ctrl to system reset (reboot firmware)
-
-    combo_sys_reset {
-        timeout-ms = <500>;
-        key-positions = <0 24 36>;  // ESC (0) + Left Shift (24) + Left Ctrl (36)
-        bindings = <&sys_reset>;
-    };
-
-    // Press Left Shift + Left Ctrl + Left Win to clear all BT bonds
-
-    combo_bt_clr_all {
-        timeout-ms = <500>;
-        key-positions = <24 36 50>;  // Left Shift (24) + Left Ctrl (36) + Left Win (50)
-        bindings = <&bt BT_CLR_ALL>;
-    };
 
     keymap {
         compatible = "zmk,keymap";
